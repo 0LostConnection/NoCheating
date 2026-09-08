@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "id": "nocheating",
+  "version": "${version}",
+  "name": "NoCheating",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/nocheating/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "win.lt404.nocheating.client.NocheatingClient"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=${min_loader_version}",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
