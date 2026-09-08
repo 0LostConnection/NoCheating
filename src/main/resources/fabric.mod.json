@@ -4,9 +4,14 @@
   "version": "${version}",
   "name": "NoCheating",
   "description": "",
-  "authors": [],
-  "contact": {},
-  "license": "All-Rights-Reserved",
+  "authors": [
+    "LostConnection"
+  ],
+  "contact": {
+    "homepage": "https://github.com/0LostConnection/NoCheating",
+    "sources": "https://github.com/0LostConnection/NoCheating"
+  },
+  "license": "MIT",
   "icon": "assets/nocheating/icon.png",
   "environment": "client",
   "entrypoints": {
