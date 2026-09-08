@@ -9,7 +9,8 @@
   ],
   "contact": {
     "homepage": "https://github.com/0LostConnection/NoCheating",
-    "sources": "https://github.com/0LostConnection/NoCheating"
+    "sources": "https://github.com/0LostConnection/NoCheating",
+    "issues": "https://github.com/0LostConnection/NoCheating/issues"
   },
   "license": "MIT",
   "icon": "assets/nocheating/icon.png",
