@@ -3,6 +3,9 @@ package win.lt404.nocheating.client;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.screen.v1.ScreenEvents;
 import net.fabricmc.fabric.api.client.screen.v1.Screens;
+import net.fabricmc.loader.api.FabricLoader;
+import net.fabricmc.loader.api.ModContainer;
+import net.fabricmc.loader.api.metadata.ModMetadata;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.components.AbstractWidget;
 import net.minecraft.client.gui.components.Tooltip;
@@ -33,7 +36,7 @@ public class NocheatingClient implements ClientModInitializer {
 
     @Override
     public void onInitializeClient() {
-        LOGGER.info("Initialized");
+        logStartup();
         ScreenEvents.AFTER_INIT.register((client, screen, scaledWidth, scaledHeight) -> {
             if (!shouldLockCheatControls(client)) {
                 return;
@@ -46,6 +49,25 @@ public class NocheatingClient implements ClientModInitializer {
                 disableMatchingWidget(screen, ALLOW_COMMANDS_BUTTON_KEY, ALLOW_COMMANDS_DISABLED_TOOLTIP);
             }
         });
+        LOGGER.info("Initialized");
+    }
+
+    private static void logStartup() {
+        FabricLoader loader = FabricLoader.getInstance();
+        ModMetadata meta = loader.getModContainer(MOD_ID).map(ModContainer::getMetadata).orElse(null);
+        String name = meta != null ? meta.getName() : "NoCheating";
+        String version = meta != null ? meta.getVersion().getFriendlyString() : "unknown";
+
+        LOGGER.info("Starting {} {}", name, version);
+        LOGGER.info("Minecraft {} | Fabric Loader {}", modVersion(loader, "minecraft"), modVersion(loader, "fabricloader"));
+        LOGGER.info("Running on {}", loader.getEnvironmentType().name().toLowerCase());
+    }
+
+    private static String modVersion(FabricLoader loader, String modId) {
+        return loader.getModContainer(modId)
+            .map(ModContainer::getMetadata)
+            .map(metadata -> metadata.getVersion().getFriendlyString())
+            .orElse("unknown");
     }
 
     private static boolean shouldLockCheatControls(Minecraft client) {
