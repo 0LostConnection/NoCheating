@@ -3,7 +3,7 @@
   "id": "nocheating",
   "version": "${version}",
   "name": "NoCheating",
-  "description": "Locks World Options and Open to LAN cheat controls on worlds created without commands, so Survival saves cannot enable cheats after the fact.",
+  "description": "Locks Open to LAN game mode and allow-cheats controls on worlds created without commands, so Survival saves cannot enable cheats after the fact.",
   "authors": [
     "LostConnection"
   ],
