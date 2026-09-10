@@ -13,7 +13,7 @@ On a locked world:
 
 Disabled buttons stay visible and show a tooltip explaining they are locked.
 
-![The Options screen with World Options greyed out and a tooltip that says World Options is disabled.](https://raw.githubusercontent.com/0LostConnection/NoCheating/master/docs/world-options-disabled.png)
+![The Options screen with World Options greyed out and a tooltip that says World Options is disabled.](https://github.com/0LostConnection/NoCheating/blob/ee70b2ed7c803d0e3a9200265127dae99463e2d2/docs/world-options-disabled.png)
 
 ## What it does not lock
 
